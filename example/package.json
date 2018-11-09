@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "haul": "haul"
+  },
+  "dependencies": {
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.57.4",
+    "react-native-floating-menu": "../",
+    "react-navigation": "^2.18.2"
+  },
+  "devDependencies": {
+    "metro-react-native-babel-preset": "0.49.0"
+  }
+}
