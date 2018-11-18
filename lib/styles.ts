@@ -18,13 +18,6 @@ export default StyleSheet.create({
     paddingHorizontal: 35,
     borderRadius: 4,
     backgroundColor: 'white',
-    shadowOffset: {
-      height: 3,
-      width: 3,
-    },
-    shadowColor: 'grey',
-    shadowRadius: 7,
-    shadowOpacity: 0.35,
   },
   anchor: {
     position: 'relative',
@@ -36,17 +29,20 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     zIndex: 102,
   },
+  dropShadow: {
+    shadowOffset: {
+      height: 3,
+      width: 3,
+    },
+    shadowColor: 'grey',
+    shadowRadius: 7,
+    shadowOpacity: 0.35,
+    elevation: 7,
+  },
   optionsContainer: {
     borderRadius: 3,
     backgroundColor: 'white',
     width: 210,
-    shadowOffset: {
-      height: 2,
-      width: 2,
-    },
-    shadowColor: 'grey',
-    shadowRadius: 5,
-    shadowOpacity: 0.35,
   },
   selectedTabIndicator: {
     height: 7,

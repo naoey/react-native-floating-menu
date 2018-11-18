@@ -1,6 +1,6 @@
 {
   "name": "react-native-floating-menu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A dead simple popup menu component with a floating trigger",
   "main": "dist/index.js",
   "repository": {
@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "prepublish": "yarn build",
     "build": "tsc"
   },
   "dependencies": {

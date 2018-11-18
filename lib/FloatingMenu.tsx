@@ -50,9 +50,10 @@ export interface FloatingMenuItem {
 }
 
 export default class FloatingMenu extends React.Component<FloatingMenuProps, FloatingMenuState> {
-  static defaultProps = {
-    showSelectedItemIndicator: true,
-    closeMenuOnSelect: true,
+  static defaultProps: Partial<FloatingMenuProps> = {
+    showSelectedIndicator: true,
+    closeOnSelect: true,
+    items: [],
   }
 
   state = { optionsContainerAnim: new Animated.Value(0), isMenuOpen: false }
@@ -99,6 +100,7 @@ export default class FloatingMenu extends React.Component<FloatingMenuProps, Flo
           style={[
             styles.optionsContainer,
             styles.flexOne,
+            styles.dropShadow,
             { height: optionsContainerAnim, marginBottom: isMenuOpen ? -4 : 0 },
           ]}
         >
@@ -121,7 +123,7 @@ export default class FloatingMenu extends React.Component<FloatingMenuProps, Flo
           isMenuOpen ? <View style={styles.anchor} /> : null
         }
 
-        <TouchableOpacity style={styles.trigger} onPress={this.toggleMenu}>
+        <TouchableOpacity style={[styles.trigger, styles.dropShadow]} onPress={this.toggleMenu}>
           <Text>Tabs</Text>
         </TouchableOpacity>
       </View>

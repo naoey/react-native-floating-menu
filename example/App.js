@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 import FloatingMenu from 'react-native-floating-menu';
 
 const items = [{
@@ -21,7 +22,48 @@ const items = [{
   value: 3,
 }];
 
-export default class App extends Component {
+const examples = [{
+  name: 'Basic',
+  route: 'Basic',
+}];
+
+class Home extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  }
+
+  renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        paddingVertical: 20,
+        paddingHorizontal: 10,
+        borderBottomColor: 'grey',
+        borderBottomWidth: 1,
+      }}
+      onPress={() => this.props.navigation.navigate(item.route)}>
+      <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>{item.name}</Text>
+    </TouchableOpacity>
+  )
+
+  render() {
+    return (
+      <FlatList
+        renderItem={this.renderItem}
+        style={{ flex: 1 }}
+        data={examples}
+        keyExtractor={item => item.route}
+      />
+    );
+  }
+}
+
+class ExampleBasic extends Component {
+  static navigationOptions = {
+    title: 'Basic Example',
+  }
+
   state = { selectedItem: items[0] }
 
   render() {
@@ -36,6 +78,21 @@ export default class App extends Component {
         />
       </View>
     );
+  }
+}
+
+const Navigator = createStackNavigator({
+  Home: {
+    screen: Home
+  },
+  Basic: {
+    screen: ExampleBasic
+  },
+});
+
+export default class App extends Component {
+  render() {
+    return <Navigator />;
   }
 }
 
