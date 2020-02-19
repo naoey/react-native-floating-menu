@@ -15,16 +15,14 @@
     "prepublish": "yarn build",
     "build": "tsc"
   },
-  "dependencies": {
-    "@types/react": "^16.4.18",
-    "@types/react-native": "^0.57.7"
-  },
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-native": ">=0.46.0",
     "react-native-vector-icons": ">=6.0.0"
   },
   "devDependencies": {
+    "@types/react": "^16.4.18",
+    "@types/react-native": "^0.57.7",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6"
   }
