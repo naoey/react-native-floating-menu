@@ -99,12 +99,10 @@ export default class FloatingMenu extends React.Component<FloatingMenuProps, Flo
         <Animated.View
           style={[
             styles.optionsContainer,
-            styles.flexOne,
-            styles.dropShadow,
             { height: optionsContainerAnim, marginBottom: isMenuOpen ? -4 : 0 },
           ]}
         >
-          <ScrollView style={styles.flexOne} contentContainerStyle={[styles.scrollContainer, styles.flexOne]}>
+          <ScrollView contentContainerStyle={[styles.scrollContainer]}>
             {
               items.map(t => (
                 <TouchableOpacity style={styles.option} key={t.value} onPress={() => this.onSelectOption(t)}>
