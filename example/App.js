@@ -35,21 +35,6 @@ export default class App extends Component {
   }
 }
 
-const Navigator = createStackNavigator({
-  Home: {
-    screen: Home
-  },
-  Basic: {
-    screen: ExampleBasic
-  },
-});
-
-export default class App extends Component {
-  render() {
-    return <Navigator />;
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
